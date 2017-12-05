@@ -1,20 +1,20 @@
-package com.guaju.sugertea.utils;
+package com.guaju.smsverifymvpdemo.utils;
 
 
 import android.os.Build;
-
-import com.guaju.sugertea.constant.Constant;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by Sacowiw on 2017/5/17.
+ * 与后台 ios  web前端 一起约定好的接口校验规则，一般来说，都会对参数进行一定规则的拼接，然后进行md5加密，
+ * 得到的一个字符串 当做我们的接口签名 sign=""
  */
 
-public class AppUtil {
-    public static String encryptSign(String t, String s, String p, String i) {
-        return MD5(t + p + Constant.SALT + i);
+public class SignUtil {
+    static String SALT = "3c66790a694fd53aed110a8e85f1aeec";
+    public static String encryptSign(String t, String p, String i) {
+        return MD5(t + p + SALT + i);
     }
 
     public static String MD5(String str) {

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SMSVerifyMVPDemo</string>
+    <string name="verifycode_error">验证码校验失败</string>
+    <string name="verifycode_success">验证码获取成功</string>
+    <string name="phonenum_empty">请补全您的电话号码</string>
+    <string name="phonenum_error">手机号格式不对，请检查</string>
 </resources>
