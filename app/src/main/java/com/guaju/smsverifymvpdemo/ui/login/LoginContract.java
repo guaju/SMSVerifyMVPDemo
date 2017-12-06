@@ -1,12 +1,15 @@
 package com.guaju.smsverifymvpdemo.ui.login;
 
+import com.guaju.smsverifymvpdemo.base.BasePresenter;
+import com.guaju.smsverifymvpdemo.base.BaseView;
+
 /**
  * Created by guaju on 2017/12/4.
  */
 
 public interface LoginContract {
     //专门来处理view的变化
-    interface  LoginView{
+    interface  LoginView  extends BaseView {
       //设置loginButton是否可用
       void  setLoginButtonEnable(boolean value);
       //提示校验失败
@@ -22,7 +25,7 @@ public interface LoginContract {
 
     }
     //处理业务逻辑
-    interface Presenter{
+    interface Presenter extends BasePresenter {
         //请求发送校验码
         void requestVerifyCode();
         //检验验证码是否可用，跟登录一致

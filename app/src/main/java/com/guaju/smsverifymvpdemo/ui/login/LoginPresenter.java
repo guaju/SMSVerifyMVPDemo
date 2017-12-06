@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.guaju.smsverifymvpdemo.R;
+import com.guaju.smsverifymvpdemo.base.BasePresenterImpl;
 import com.guaju.smsverifymvpdemo.bean.BaseBean;
 import com.guaju.smsverifymvpdemo.model.engine.LoginEngine;
 import com.guaju.smsverifymvpdemo.utils.VerifyNum;
@@ -14,13 +15,14 @@ import java.io.IOException;
  * Created by guaju on 2017/12/4.
  */
 
-public class LoginPresenter implements LoginContract.Presenter,View.OnClickListener {
+public class LoginPresenter extends BasePresenterImpl implements LoginContract.Presenter,View.OnClickListener {
     LoginEngine loginEngine=new LoginEngine();
     //声明view实现类
     LoginContract.LoginView loginView;
     LoginActivity loginActivity;
 
     public LoginPresenter(LoginContract.LoginView loginView) {
+        super(loginView);
         this.loginView = loginView;
         loginActivity=(LoginActivity)loginView;
 
